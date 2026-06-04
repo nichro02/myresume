@@ -145,6 +145,7 @@ INSTRUCTIONS:
     }
   };
 
+<<<<<<< HEAD
   const exportPDF = async () => {
     const { jsPDF } = await import("https://esm.sh/jspdf@2.5.1");
 
@@ -194,6 +195,19 @@ INSTRUCTIONS:
     }
 
     doc.save("MyResume.pdf");
+=======
+  const exportPDF = () => {
+    const win = window.open("", "_blank");
+    win.document.write(`
+      <html><head><title>MyResume Export</title>
+      <style>
+        body { font-family: 'Georgia', serif; font-size: 11pt; line-height: 1.6; padding: 2cm; white-space: pre-wrap; color: #111; }
+      </style></head>
+      <body>${result.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</body></html>
+    `);
+    win.document.close();
+    win.print();
+>>>>>>> 99ba73260718027e573eccf8b27a0350c2b53a6c
   };
 
   const resetAll = () => {
